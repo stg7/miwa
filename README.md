@@ -16,11 +16,11 @@ Afterwards copy the following code to your page header (that is hopefully used i
     img.src = src;
     img.style.visibility = "hidden";
     document.body.appendChild(img);
-
   </script>
 ```
 
 `<URL/AND/PATH/TO/SCRIPT/>` needs to be changed to your public server.
+Here loading an image is simulated, this should work in most cases.
 
 The script saves in a sqlite3 database the following values for a request:
 
