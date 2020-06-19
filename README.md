@@ -22,7 +22,7 @@ Afterwards copy the following code to your page header (that is hopefully used i
 `<URL/AND/PATH/TO/SCRIPT/>` needs to be changed to your public server.
 Here loading an image is simulated, this should work in most cases.
 
-The script saves in a sqlite3 database the following values for a request:
+The script stores in a sqlite3 database the following values for a request:
 
 * ip_address
 * user_agent: client user agent
