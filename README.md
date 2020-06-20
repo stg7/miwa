@@ -5,7 +5,7 @@ Here the focus was not to make something similar to google analytics or Matomo, 
 
 # Usage
 
-Copy the script `glo.php` (it is sorted for log ;) to a path on a https webserver with php and sqlite, here it is important that the path of this script does not match any blocking rule of common ad blockers, e.g. `log.php` does not work, or `stats/..`.
+Copy the script `glo.php` to a path on a https webserver with php and sqlite, here it is important that the path of this script does not match any blocking rule of common ad blockers, e.g. `log.php` does not work, or `stats/..`.
 
 Moreover change the APIKEY inside the `glo.php` and also in the javascript code.
 
