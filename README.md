@@ -9,7 +9,7 @@ Copy the script `glo.php` to a path on a https webserver with php and sqlite, he
 
 Moreover change the APIKEY inside the `glo.php` and also in the javascript code.
 
-Afterwards copy the following code to your page header (that is hopefully used in all subpages due to templating)
+Afterwards copy the following code to your page header (that is hopefully used in all subpages due to templating).
 
 ```
   <script type="text/javascript">
