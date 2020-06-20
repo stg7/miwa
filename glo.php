@@ -1,5 +1,5 @@
 <?php
-
+define("API_KEY", "KEY");
 
 function get_user_ip() {
     /* based on https://www.whatismyip.com/questions/how-do-i-find-my-real-ip-address-in-php-getting-servers-ip-rather-than-visitors-ip/ */
@@ -25,16 +25,18 @@ function get_user_ip() {
 
 
 try {
-    $db =  new SQLite3("test.db");
-    $db->exec('CREATE TABLE IF NOT EXISTS stats (ip_address STRING, user_agent STRING, page STRING, datetime STRING );');
+    if (isset($_GET["key"]) && $_GET["key"] == API_KEY) {
+        $db =  new SQLite3("test.db");
+        $db->exec('CREATE TABLE IF NOT EXISTS stats (ip_address STRING, user_agent STRING, page STRING, datetime STRING );');
 
-    $statement = $db->prepare('INSERT INTO stats VALUES (:ip_address, :user_agent, :page, :time_);');
-    $statement->bindValue(':ip_address', get_user_ip());
-    $statement->bindValue(':user_agent', $_SERVER['HTTP_USER_AGENT']);
-    $statement->bindValue(':page', json_encode($_GET));
-    $statement->bindValue(':time_', date("c"));
-    $result = $statement->execute();
-    $db->close();
+        $statement = $db->prepare('INSERT INTO stats VALUES (:ip_address, :user_agent, :page, :time_);');
+        $statement->bindValue(':ip_address', get_user_ip());
+        $statement->bindValue(':user_agent', $_SERVER['HTTP_USER_AGENT']);
+        $statement->bindValue(':page', json_encode($_GET));
+        $statement->bindValue(':time_', date("c"));
+        $result = $statement->execute();
+        $db->close();
+    }
 
 } catch (Exception $e) {
     echo "<pre>";
