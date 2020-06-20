@@ -2,6 +2,7 @@
 
 
 function get_user_ip() {
+    /* based on https://www.whatismyip.com/questions/how-do-i-find-my-real-ip-address-in-php-getting-servers-ip-rather-than-visitors-ip/ */
     $client  = @$_SERVER['HTTP_CLIENT_IP'];
     $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
     $remote  = $_SERVER['REMOTE_ADDR'];
